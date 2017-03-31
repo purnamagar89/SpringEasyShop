@@ -1,0 +1,43 @@
+@CHARSET "ISO-8859-1";
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 60%;
+	padding: 10px;
+}
+
+.logout {
+	position: absolute;
+	color: white;
+	top: 15px;
+	right: 15px;
+}
+
+div.header {
+	background-color: blue;
+	color: white;
+	width: 97.5%;
+	padding: 20px;
+}
+
+.home {
+	position: absolute;
+	right: 15px;
+	top: 50px;
+}
+
+div.orderprocess {
+	text-align: center;
+	padding: 10px;
+	position: absolute;
+	top: 50px;
+	left: 400px;
+	width: 60%;
+}
+
+.user {
+	position: absolute;
+	top: 70px;
+	left: 200px;
+}

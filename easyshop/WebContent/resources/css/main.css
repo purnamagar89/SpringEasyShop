@@ -1,0 +1,102 @@
+@CHARSET "ISO-8859-1";
+
+.right {
+	position: absolute;
+	right: 1px;
+	padding: 2px;
+}
+
+.header {
+	background-color: blue;
+	color: white;
+	width: 97.5%;
+	padding: 20px;
+}
+
+div.login {
+	text-align: center;
+	position: relative;
+	top: 120px;
+	left: 500px;
+	width: 320px;
+	height: 260px;
+	border: 1px solid lightgrey;
+	border-radius: 4px;
+	padding: 14px 25px;
+}
+
+div.errorMsg {
+	text-align: center;
+	padding: 10px;
+	position: relative;
+	top: 135px;
+	left: 500px;
+	width: 310px;
+	height: 50px;
+	padding: 14px 18px;
+}
+
+div.createaccount {
+	text-align: center;
+	padding: 10px;
+	position: relative;
+	top: 200px;
+	left: 500px;
+	width: 430px;
+	height: 275px;
+	border: 1px solid lightgrey;
+	border-radius: 4px;
+	padding: 14px 25px;
+}
+
+.logout {
+	position: absolute;
+	color: white;
+	top: 15px;
+	right: 15px;
+}
+
+.home {
+	position: absolute;
+	right: 15px;
+	top: 50px;
+}
+
+.color {
+	color: blue;
+}
+
+.error {
+	font-size: small;
+	color: red;
+}
+
+p.error {
+	color: red;
+	font-size: medium;
+}
+
+.valid {
+	font-size: small;
+	color: blue;
+}
+
+.bgimg {
+	background-image: url('../images/background1.jpg');
+	width: 1272.39px;
+	height: 690px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.button {
+	display: block;
+	width: 115px;
+	height: 25px;
+	background: #4E9CAF;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+}
