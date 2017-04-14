@@ -54,6 +54,7 @@
 			In</a>
 	</div>
 
+
 	<div class="createaccount">
 		<h2>Create Account</h2>
 		<sf:form id="form_id"
@@ -61,9 +62,12 @@
 			commandName="user">
 			<table>
 				<tr>
-					<td>User Name:
+					<td style="text-align: left">Email
 					<td>
-					<td><sf:input style="height: 25px; width: 175px;" type="text"
+				</tr>
+				<tr>
+
+					<td><sf:input style="height: 25px; width: 220px;" type="text"
 							path="username" name="username" /><br>
 						<div class="error">
 							<sf:errors path="username" />
@@ -71,9 +75,11 @@
 					<td>
 				</tr>
 				<tr>
-					<td>Password:
+					<td style="text-align: left">Password
 					<td>
-					<td><sf:input style="height: 25px; width: 175px;" id="pass"
+				</tr>
+				<tr>
+					<td><sf:input style="height: 25px; width: 220px;" id="pass"
 							type="text" path="password" name="password" /><br>
 						<div class="error">
 							<sf:errors path="password" />
@@ -81,24 +87,28 @@
 					<td>
 				</tr>
 				<tr>
-					<td>Confirm Password:
+					<td style="text-align: left">Confirm Password
 					<td>
-					<td><input style="height: 25px; width: 175px;"
+				</tr>
+				<tr>
+					<td><input style="height: 25px; width: 220px;"
 						id="confirmpass" type="text" name="confirmpassword" /><br>
 						<div id="passwordmatch"></div>
 					<td>
 				</tr>
 				<tr>
-					<td>
-					<td>
-					<td><input type="image" alt="Create New Account" width="181"
-						height="30" style="text-align: center; font-size: 13px;">
+					<td></td>
+				</tr>
+				<tr>
+					<td><input class="button" type="submit"
+						value="Create New Account" width="181" height="30"
+						style="text-align: center; font-size: 13px;">
 					<td>
 				</tr>
 			</table>
 		</sf:form>
 	</div>
-	
+
 
 </body>
 </html>

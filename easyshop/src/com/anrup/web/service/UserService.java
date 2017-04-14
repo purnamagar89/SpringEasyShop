@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.anrup.web.dao.User;
 import com.anrup.web.dao.UserDAO;
+import com.anrup.web.ldo.User;
 
 @Service
 public class UserService {

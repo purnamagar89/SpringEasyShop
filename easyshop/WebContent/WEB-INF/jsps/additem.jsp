@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,8 +23,41 @@
 		<a href="${pageContext.request.contextPath}/">Home</a>
 	</div>
 
+	<h2>Upload Item</h2>
 
-	<div>
+	<form action="${pageContext.request.contextPath}/uploadImage"
+		method="post" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td>Item Name:</td>
+				<td><input type="text" name="item_name" /></td>
+
+			</tr>
+
+			<tr>
+				<td>Item Price:</td>
+				<td><input type="text" name="item_price" /></td>
+			</tr>
+
+			<tr>
+				<td>select item:</td>
+				<td><input type="file" name="image" required="required" />
+					<br /></td>
+				<td><input name="${_csrf.parameterName}" type="hidden"
+					value="${_csrf.token}" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="AddItem"></td>
+			</tr>
+
+		</table>
+
+	</form>
+
+
+
+	<%-- <div>
 		<sf:form action="${pageContext.request.contextPath}/itemadded"
 			commandName="item">
 
@@ -36,8 +71,11 @@
 				<tr>
 					<td>Item Price:</td>
 					<td><sf:input type="text" path="item_price" name="item_price" /></td>
+					<td><input type="text" name="item_location"
+						required="required" /></td>
 
 				</tr>
+
 				<tr>
 					<td><input type="submit" value="AddItem"></td>
 
@@ -45,6 +83,6 @@
 			</table>
 		</sf:form>
 	</div>
-
+ --%>
 </body>
 </html>

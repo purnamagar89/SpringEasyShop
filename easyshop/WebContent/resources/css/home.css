@@ -1,44 +1,73 @@
 @CHARSET "ISO-8859-1";
-table,th,td{
+
+table{
 	border: 1px solid black;
 	border-collapse: collapse;
-    width: 70%;
-    padding:4px;
 }
 
-.header {
-	background-color: blue;
-	color: white;
-	width: 97.5%;
-	padding: 20px;
+th, td {
+	padding: 5px;
+	text-align: left;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.row-Id {
+	width: 6%;
+}
+
+.row-name {
+	width: 27%;
+}
+
+.row-image {
+	width: 27%;
+}
+
+.row-price {
+	width: 13%;
+}
+.row-qunatity {
+	width: 27%;
 }
 
 .additemdiv {
-    position: absolute;
-    right: 15px;
-    border: 1.8px solid blue;
-    padding: 2px;
+	position: absolute;
+	right: 15px;
+	border: 1.8px solid blue;
+	padding: 2px;
 }
 
 .logout {
 	position: absolute;
-	color:white;
+	color: white;
 	top: 15px;
 	right: 15px;
 }
 
-.admin{
-	position:absolute;
-	right:15px;
-	top:50px;	
+.admin {
+	position: absolute;
+	right: 15px;
+	top: 50px;
 }
 
 .items {
-	text-align:center;
-    padding:10px;
+	text-align: left;
+	padding: 10px;
 	position: absolute;
-	width:70%;
-    top: 70px;
-    left:200px;
+	table-layout: fixed;
+	width: 70%;
+	top: 70px;
+	left: 150px;
 }
 
+.button_home {
+	width: 80px;
+	padding: 5px 7px;
+	text-align: center;
+	text-decoration: blink;
+	border-radius: 4px;
+	color: black;
+	font-weight: bold;
+	font-size: 10px;
+}

@@ -9,44 +9,55 @@
 .header {
 	background-color: blue;
 	color: white;
-	width: 97.5%;
-	padding: 20px;
-}
-
-div.login {
-	text-align: center;
+	width: 98.1%;
 	position: relative;
-	top: 120px;
-	left: 500px;
-	width: 320px;
-	height: 260px;
-	border: 1px solid lightgrey;
-	border-radius: 4px;
-	padding: 14px 25px;
+	height: 6px;
+	left: -8px;
+	padding: 20px;
 }
 
 div.errorMsg {
 	text-align: center;
 	padding: 10px;
-	position: relative;
-	top: 135px;
+	position: fixed;
+	top: 45px;
 	left: 500px;
 	width: 310px;
 	height: 50px;
 	padding: 14px 18px;
 }
 
+div.login {
+	text-align: center;
+	position: relative;
+	top: 40px;
+	left: 500px;
+	width: 240px;
+	height: 350px;
+	border: 1px solid lightgrey;
+	border-radius: 8px;
+	padding: 15px 60px;
+}
+
 div.createaccount {
 	text-align: center;
-	padding: 10px;
 	position: relative;
-	top: 200px;
+	top: 56px;
 	left: 500px;
-	width: 430px;
-	height: 275px;
+	width: 240px;
+	height: 350px;
 	border: 1px solid lightgrey;
-	border-radius: 4px;
-	padding: 14px 25px;
+	border-radius: 8px;
+	padding: 15px 60px;
+}
+
+div.main_div {
+	text-align: center;
+	position: relative;
+	top: 56px;
+	left: 500px;
+	width: 240px;
+	height: 350px;
 }
 
 .logout {
@@ -90,13 +101,12 @@ p.error {
 }
 
 .button {
-	display: block;
-	width: 115px;
-	height: 25px;
-	background: #4E9CAF;
-	padding: 10px;
+	width: 228px;
+	padding: 8px 12px;
 	text-align: center;
+	text-decoration: blink;
 	border-radius: 5px;
-	color: white;
+	color: black;
 	font-weight: bold;
+	font-size: 12px;
 }

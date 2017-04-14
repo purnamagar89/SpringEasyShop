@@ -14,7 +14,7 @@
 
 </head>
 <body onload='document.f.username.focus();'>
-
+	<div class="header"></div>
 
 	<div class="errorMsg">
 		<c:if test="${param.error != null}">
@@ -22,58 +22,48 @@
 		</c:if>
 
 	</div>
+	<p></p>
 	<div class="login">
-
-
-
 
 		<form name='f' action='${pageContext.request.contextPath}/login'
 			method='POST'>
 			<table>
 				<tr>
-					<td></td>
 					<td><h2>Sign In</h2></td>
 				</tr>
 				<tr>
-					<td>Email:</td>
+					<td style="text-align: left">Email</td>
+				</tr>
+				<tr>
 					<td><input type='text' name='username' value=''
-						style="height: 25px; width: 170px;"></td>
+						style="height: 25px; width: 220px;"></td>
+				</tr>
+
+				<tr>
+					<td style="text-align: left">Password</td>
 				</tr>
 				<tr>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td><input style="height: 25px; width: 170px;" type='password'
+					<td><input style="height: 25px; width: 220px;" type='password'
 						name='password' /></td>
 				</tr>
 				<tr>
+					<td><input name="${_csrf.parameterName}" type="hidden"
+						value="${_csrf.token}" /></td>
+				<tr>
+				<tr>
+					<td><input class="button" type="submit" value="Sign In"></td>
 				</tr>
 				<tr>
-					<td></td>
-					<td colspan='3'><input type="image" alt="Sign in" width="178"
-						height="30" style="text-align: center;font-size:13px;"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
 
-				<input name="${_csrf.parameterName}" type="hidden"
-					value="${_csrf.token}" />
-				<tr>
-					<td></td>
+					<td><p></p></td>
 				</tr>
 				<tr>
-					<td></td>
-					<td style ="font-size:13px">New User?</td>
+					<td style="font-size: 18px">New User?</td>
 				</tr>
 
 				<tr>
-					<td></td>
-					<td><a href="${pageContext.request.contextPath}/createaccount">
-							<img alt="Create Account"
-							style="width: 178px; height: 30px; color: black;font-size:14px">
-					</a></td>
+					<td><input class="button" type="button" value="Create Account"
+						onclick="window.location.href='${pageContext.request.contextPath}/createaccount'" /></td>
 				</tr>
 
 			</table>

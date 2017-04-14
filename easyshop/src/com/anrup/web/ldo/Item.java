@@ -1,4 +1,4 @@
-package com.anrup.web.dao;
+package com.anrup.web.ldo;
 
 import org.springframework.stereotype.Component;
 
@@ -10,6 +10,15 @@ public class Item {
 	private int item_price;
 	private String item_quantity;
 	private double total;
+	private String item_image;
+
+	public String getItem_image() {
+		return item_image;
+	}
+
+	public void setItem_image(String item_image) {
+		this.item_image = item_image;
+	}
 
 	public Item() {
 	}
@@ -56,9 +65,8 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [item_id=" + item_id + ", item_name=" + item_name
-				+ ", item_price=" + item_price + ", item_quantity="
-				+ item_quantity + ", total=" + total + "]";
+		return "Item [item_id=" + item_id + ", item_name=" + item_name + ", item_price=" + item_price
+				+ ", item_quantity=" + item_quantity + ", total=" + total + "]";
 	}
 
 }

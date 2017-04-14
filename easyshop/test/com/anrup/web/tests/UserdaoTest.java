@@ -1,6 +1,6 @@
 package com.anrup.web.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import javax.sql.DataSource;
 
@@ -12,8 +12,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.anrup.web.dao.User;
 import com.anrup.web.dao.UserDAO;
+import com.anrup.web.ldo.User;
 
 @ActiveProfiles("dev")
 @ContextConfiguration(locations = {

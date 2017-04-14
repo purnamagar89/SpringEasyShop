@@ -1,12 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-.header {
-	background-color: blue;
-	color: white;
-	width: 97.5%;
-	padding: 20px;
-}
-
 .logout {
 	position: absolute;
 	color: white;

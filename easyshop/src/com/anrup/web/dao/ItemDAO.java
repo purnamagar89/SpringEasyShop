@@ -13,6 +13,8 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import com.anrup.web.ldo.Item;
+
 @Component("itemDAO")
 public class ItemDAO {
 
@@ -25,30 +27,27 @@ public class ItemDAO {
 
 	public boolean createItem(Item item) {
 
-		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(
-				item);
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(item);
 
-		return jdbc
-				.update("insert into productdetails (item_name ,item_price) values(:item_name,:item_price)",
-						params) == 1;
+		return jdbc.update(
+				"insert into productdetails (item_name ,item_price) values(:item_name,:item_price)",
+				params) == 1;
 
 	}
 
 	public List<Item> getCurrentItems() {
 
-		return jdbc.query("select * from productdetails",
-				new RowMapper<Item>() {
+		return jdbc.query("select * from productdetails", new RowMapper<Item>() {
 
-					public Item mapRow(ResultSet rs, int rowNum)
-							throws SQLException {
+			public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-						Item i = new Item();
-						i.setItem_id(rs.getInt("item_id"));
-						i.setItem_name(rs.getString("item_name"));
-						i.setItem_price(rs.getInt("item_price"));
-						return i;
-					}
-				});
+				Item i = new Item();
+				i.setItem_id(rs.getInt("item_id"));
+				i.setItem_name(rs.getString("item_name"));
+				i.setItem_price(rs.getInt("item_price"));
+				return i;
+			}
+		});
 
 	}
 
@@ -57,21 +56,18 @@ public class ItemDAO {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("id", id);
 
-		return jdbc.queryForObject(
-				"select * from productdetails where item_id = :id", params,
-				new RowMapper<Item>() {
+		return jdbc.queryForObject("select * from productdetails where item_id = :id", params, new RowMapper<Item>() {
 
-					public Item mapRow(ResultSet rs, int rowNum)
-							throws SQLException {
+			public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-						Item i = new Item();
-						i.setItem_id(rs.getInt("item_id"));
-						i.setItem_name(rs.getString("item_name"));
-						i.setItem_price(rs.getInt("item_price"));
-						return i;
+				Item i = new Item();
+				i.setItem_id(rs.getInt("item_id"));
+				i.setItem_name(rs.getString("item_name"));
+				i.setItem_price(rs.getInt("item_price"));
+				return i;
 
-					}
-				});
+			}
+		});
 
 	}
 

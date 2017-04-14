@@ -1,4 +1,4 @@
-package com.anrup.web.dao;
+package com.anrup.web.ldo;
 
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;

@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.anrup.web.dao.Item;
+import com.anrup.web.ldo.Item;
 import com.anrup.web.service.ItemService;
 
 @Controller
