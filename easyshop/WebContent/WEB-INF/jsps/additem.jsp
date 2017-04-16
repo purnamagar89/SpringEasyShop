@@ -28,6 +28,14 @@
 	<form action="${pageContext.request.contextPath}/uploadImage"
 		method="post" enctype="multipart/form-data">
 		<table>
+
+			<tr>
+				<td>Item Category:</td>
+				<td><input type="text" name="item_category" /></td>
+
+			</tr>
+
+
 			<tr>
 				<td>Item Name:</td>
 				<td><input type="text" name="item_name" /></td>
@@ -41,8 +49,7 @@
 
 			<tr>
 				<td>select item:</td>
-				<td><input type="file" name="image" required="required" />
-					<br /></td>
+				<td><input type="file" name="item_image" required="required" /> <br /></td>
 				<td><input name="${_csrf.parameterName}" type="hidden"
 					value="${_csrf.token}" /></td>
 			</tr>

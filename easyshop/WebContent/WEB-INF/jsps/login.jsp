@@ -14,7 +14,20 @@
 
 </head>
 <body onload='document.f.username.focus();'>
-	<div class="header"></div>
+
+	<div class="header">
+
+		<div class="header_content">
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+		</div>
+
+
+	</div>
 
 	<div class="errorMsg">
 		<c:if test="${param.error != null}">

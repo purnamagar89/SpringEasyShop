@@ -16,6 +16,20 @@
 	padding: 20px;
 }
 
+div.main_logout {
+	width: 10px;
+	left: 95%;
+	top: 3px;
+	position: absolute;
+	padding: 2px;
+}
+
+div.main_admin {
+	position: absolute;
+	right: 15px;
+	top: 80px;
+}
+
 div.errorMsg {
 	text-align: center;
 	padding: 10px;
@@ -109,4 +123,34 @@ p.error {
 	color: black;
 	font-weight: bold;
 	font-size: 12px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: none;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #000080;
+}
+.header_content {
+	position: absolute;
+	display: inline-block;
+	top: 0px;
+	left: 20px;
 }

@@ -30,14 +30,14 @@ public class ItemDAO {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(item);
 
 		return jdbc.update(
-				"insert into productdetails (item_name ,item_price) values(:item_name,:item_price)",
+				"insert into electronics_items (item_name ,item_price) values(:item_name,:item_price)",
 				params) == 1;
 
 	}
 
 	public List<Item> getCurrentItems() {
 
-		return jdbc.query("select * from productdetails", new RowMapper<Item>() {
+		return jdbc.query("select * from electronics_items", new RowMapper<Item>() {
 
 			public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
 
@@ -56,7 +56,7 @@ public class ItemDAO {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("id", id);
 
-		return jdbc.queryForObject("select * from productdetails where item_id = :id", params, new RowMapper<Item>() {
+		return jdbc.queryForObject("select * from electronics_items where item_id = :id", params, new RowMapper<Item>() {
 
 			public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
 

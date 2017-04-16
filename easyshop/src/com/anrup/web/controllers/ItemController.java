@@ -27,37 +27,21 @@ public class ItemController {
 		model.addAttribute("item", new Item());
 		return "additem";
 	}
-	
+
 	@RequestMapping(value = "/viewImage", method = RequestMethod.POST)
 	public String viewImage() {
 		return "viewImage";
 	}
-	
+
 	@RequestMapping("/getImage")
 	public String getImage() {
 		return "getImage";
-	}
-
-	@RequestMapping(value = "/itemadded")
-	public String itemAdded(Model model, Item item) {
-
-	    itemService.createItem(item);
-		return "itemadded";
 	}
 
 	@RequestMapping("/quantityprocess")
 	public String quantityProcesss() {
 
 		return "quantityprocess";
-	}
-
-	@RequestMapping("/itemdetails")
-	public String getCurrentItem(Model model) {
-		Item item = itemService.currentItem();
-
-		model.addAttribute("item", item);
-
-		return "itemdetails";
 	}
 
 }

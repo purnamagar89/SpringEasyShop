@@ -1,8 +1,11 @@
 @CHARSET "ISO-8859-1";
 
-table{
+table {
+	width: 100%;
 	border: 1px solid black;
 	border-collapse: collapse;
+	border: 1px solid black;
+	border: 1px solid black;
 }
 
 th, td {
@@ -27,6 +30,7 @@ th, td {
 .row-price {
 	width: 13%;
 }
+
 .row-qunatity {
 	width: 27%;
 }
@@ -38,27 +42,14 @@ th, td {
 	padding: 2px;
 }
 
-.logout {
-	position: absolute;
-	color: white;
-	top: 15px;
-	right: 15px;
-}
-
-.admin {
-	position: absolute;
-	right: 15px;
-	top: 50px;
-}
-
 .items {
 	text-align: left;
 	padding: 10px;
 	position: absolute;
 	table-layout: fixed;
 	width: 70%;
-	top: 70px;
-	left: 150px;
+	top: 80px;
+	left: 160px;
 }
 
 .button_home {
@@ -71,3 +62,63 @@ th, td {
 	font-weight: bold;
 	font-size: 10px;
 }
+
+.dropbtn {
+	background-color: white;
+	color: black;
+	font-size: 16px;
+	text-align:center;
+	margin: 0;
+	padding:0px;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	width: 35px;
+	height: 15px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+	background-color: white;
+}
+
+.dropdown {
+	position: absolute;
+	display: inline-block;
+	left: 87%;
+}
+
+.choice_dropdown {
+	position: absolute;
+	display: inline-block;
+	left: 77%;
+}
+
+.dropdown-content {
+	display: none;
+	position: relative;
+	background-color: #f9f9f9;
+	border-radius: 5px;
+	min-width: 180px;
+	overflow: auto;
+	font-size: 15px;
+	z-index: 1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 10px 14px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown a:hover {
+	background-color: #1E90FF;
+	height: 8px;
+}
+
+.show {
+	display: block;
+}
+
+

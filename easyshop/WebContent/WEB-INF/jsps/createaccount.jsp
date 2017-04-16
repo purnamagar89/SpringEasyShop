@@ -50,8 +50,9 @@
 </head>
 <body>
 	<div class="header">
-		<a class="logout" href="${pageContext.request.contextPath}/login">Sign
-			In</a>
+		<form action="${pageContext.request.contextPath}/login">
+			<input type="submit" value="Sign Out" />
+		</form>
 	</div>
 
 

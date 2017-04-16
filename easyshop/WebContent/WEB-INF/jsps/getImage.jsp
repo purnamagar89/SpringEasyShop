@@ -28,7 +28,7 @@
 		try {
 
 			con = conProvider.getConnection();
-			PreparedStatement ps = con.prepareStatement("select item_image from productdetails where item_id=?");
+			PreparedStatement ps = con.prepareStatement("select item_image from electronics_items where item_id=?");
 			ps.setInt(1, item_id);
 			ResultSet rs = ps.executeQuery();
 
