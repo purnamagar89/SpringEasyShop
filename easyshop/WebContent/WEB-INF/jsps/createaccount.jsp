@@ -13,7 +13,7 @@
 <title>Create New Account</title>
 
 <script type="text/javascript">
-	function onload() {
+	function onAccountCreatePageload() {
 		$("#pass").keyup(checkPasswordMatch);
 		$("#confirmpass").keyup(checkPasswordMatch);
 		$("#form_id").submit(checkPasswordMatch);
@@ -44,7 +44,7 @@
 			}
 		}
 	}
-	$(document).ready(onload);
+	$(document).ready(onAccountCreatePageload);
 </script>
 
 </head>

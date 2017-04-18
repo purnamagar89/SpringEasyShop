@@ -1,6 +1,5 @@
 package com.anrup.web.service;
 
-import java.io.InputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +35,14 @@ public class ItemService {
 
 	public Item currentItem() {
 		return itemDao.getItem(item.getItem_id());
+	}
+
+	public List<Item> getElectronicsItems() {
+		return itemDao.getElectronicsItems();
+	}
+
+	public List<Item> getClothItems() {
+		return itemDao.getClothItems();
 	}
 
 }

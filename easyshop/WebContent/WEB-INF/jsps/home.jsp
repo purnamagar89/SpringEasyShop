@@ -19,18 +19,19 @@
 	href="${pageContext.request.contextPath}/static/css/home.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/static/css/main.css">
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/static/script/jquery.js"></script>
 
 
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/static/script/main_home.js"></script>
-
-
+	src="${pageContext.request.contextPath}/static/script/main_home.js">
+	
+</script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>home</title>
 </head>
 <body>
-
 	<div class="header">
 
 		<div class="header_content">
@@ -41,21 +42,21 @@
 				<li><a href="#about">About</a></li>
 			</ul>
 		</div>
-
-
 		<div class="choice_dropdown">
-			<select>
-				<option value="all">All</option>
-				<option value="electronics">Electronics</option>
-				<option value="clothes">Clothes</option>
+			<select name="categories_dropdown" id="categories">
+				<option data-href="${pageContext.request.contextPath}/">
+					Categories</option>
+				<option data-href="${pageContext.request.contextPath}/">All</option>
+				<option
+					data-href="${pageContext.request.contextPath}/electronicsItems">Electronics</option>
+				<option data-href="${pageContext.request.contextPath}/clothItems">Clothes</option>
 			</select>
-		</div>
 
+		</div>
 
 		<div class="dropdown">
 			<input class="dropbtn" type="submit" value="&#9660;"
 				onclick="myFunction()" />
-			<!-- 	<button onclick="myFunction()" class="dropbtn">&#x25BC;</button> -->
 			<p>
 			<div id="myDropdown" class="dropdown-content">
 				<a href="${pageContext.request.contextPath}/admin">Admin</a> <a
@@ -63,39 +64,7 @@
 					href="${pageContext.request.contextPath}/login">Log out</a>
 			</div>
 		</div>
-
 	</div>
-
-
-
-
-	<jsp:useBean id="conProvider"
-		class="com.fileupload.servlet.ConnectionProvider"></jsp:useBean>
-
-	<jsp:useBean id="itemLdo" class="com.anrup.web.ldo.Item"></jsp:useBean>
-
-	<%
-		Connection con = null;
-		List<Item> items = new ArrayList<Item>();
-		try {
-
-			String item_name;
-			String item_price;
-			int item_id;
-			con = conProvider.getConnection();
-
-			PreparedStatement ps = con
-					.prepareStatement("select item_id,item_name,item_price from electronics_items");
-			ResultSet rs = ps.executeQuery();
-
-			while (rs.next()) {
-
-				itemLdo.setItem_name(rs.getString("item_name"));
-				itemLdo.setItem_price(Integer.parseInt(rs.getString("item_price")));
-				itemLdo.setItem_id(rs.getInt("item_id"));
-				items.add(itemLdo);
-	%>
-
 	<div class="items">
 
 		<table>
@@ -136,54 +105,5 @@
 			</c:forEach>
 		</table>
 	</div>
-
-	<%
-		}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if (con != null) {
-				try {
-					con.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	%>
-
-
-	<%-- <table class="items">
-		<tr
-			style="background-color: rgb(128, 128, 128); color: white; height: 50px">
-			<th>Item Id</th>
-			<th>Item Name</th>
-			<th>Item Price</th>
-			<th colspan="2">Item Quantity</th>
-		</tr>
-
-		<c:forEach var="item" items="${items}">
-			<tr>
-				<td width="1%" style="background-color: rgb(128, 128, 128);"><c:out
-						value="${item.item_id}"></c:out></td>
-				<td><c:out value="${item.item_name}"></c:out></td>
-				<td><c:out value="${item.item_price}"></c:out></td>
-
-				<td>
-					<form action="${pageContext.request.contextPath}/quantityprocess">
-						<input type="hidden" name="item.item_id" value="${item.item_id}" />
-						<input type="hidden" name="item.item_name"
-							value="${item.item_name}" /> <input type="hidden" size="10"
-							name="item.item_price" value="${item.item_price}" /> <input
-							type="text" size="12" name="item.item_quantity" />
-						<td><input class="button_home" type="submit"
-							value="AddToCart"></td>
-					</form>
-				</td>
-
-			</tr>
-		</c:forEach>
-	</table>
- --%>
 </body>
 </html>

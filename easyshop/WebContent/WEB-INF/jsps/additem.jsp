@@ -49,7 +49,8 @@
 
 			<tr>
 				<td>select item:</td>
-				<td><input type="file" name="item_image" required="required" /> <br /></td>
+				<td><input type="file" name="item_image" required="required" />
+					<br /></td>
 				<td><input name="${_csrf.parameterName}" type="hidden"
 					value="${_csrf.token}" /></td>
 			</tr>
@@ -62,9 +63,7 @@
 
 	</form>
 
-
-
-	<%-- <div>
+		<%-- <div>
 		<sf:form action="${pageContext.request.contextPath}/itemadded"
 			commandName="item">
 

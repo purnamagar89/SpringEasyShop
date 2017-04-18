@@ -1,3 +1,9 @@
+$(document).ready(onHomePageLoad);
+
+function onHomePageLoad(){
+	switchCategory();
+}
+
 function myFunction() {
 	document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -15,4 +21,12 @@ window.onclick = function(event) {
 			}
 		}
 	}
+}
+
+//switch category drop down options
+var switchCategory =function() {
+	$("#categories").change(
+			function() {
+				document.location.href = $(this).find(":selected").data("href");
+			});
 }

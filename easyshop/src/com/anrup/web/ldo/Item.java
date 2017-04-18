@@ -10,15 +10,6 @@ public class Item {
 	private int item_price;
 	private String item_quantity;
 	private double total;
-	private String item_image;
-
-	public String getItem_image() {
-		return item_image;
-	}
-
-	public void setItem_image(String item_image) {
-		this.item_image = item_image;
-	}
 
 	public Item() {
 	}

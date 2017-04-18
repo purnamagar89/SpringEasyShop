@@ -2,7 +2,6 @@ package com.anrup.web.controllers;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +15,6 @@ import com.anrup.web.service.ItemService;
 public class HomeController {
 
 	private ItemService itemService;
-	private static Logger logger = Logger.getLogger(HomeController.class);
 
 	@Autowired
 	public void setItemService(ItemService itemService) {
@@ -25,14 +23,26 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String goToHomePage(Model model) {
-		logger.info("showing home page...");
-
-		List<Item> items = itemService.currentItems();
-
-		model.addAttribute("items", items);
+		List<Item> allItems = itemService.currentItems();
+		model.addAttribute("items", allItems);
+		return "home";
+	}
+	
+	@RequestMapping("/electronicsItems")
+	public String getElectronicsItems(Model model) {
+		List<Item> electronicsItems = itemService.getElectronicsItems();
+		model.addAttribute("items", electronicsItems);
 		return "home";
 	}
 
+	@RequestMapping("/clothItems")
+	public String getClothItems(Model model) {
+		List<Item> electronicsItems = itemService.getClothItems();
+		model.addAttribute("items", electronicsItems);
+		return "home";
+	}
+	
+	
 	@RequestMapping("/loggedout")
 	public String showUsers() {
 		return "login";

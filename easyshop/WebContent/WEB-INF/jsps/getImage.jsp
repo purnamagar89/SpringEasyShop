@@ -22,13 +22,19 @@
 	<%
 		Connection con = null;
 		int item_id = Integer.parseInt(request.getParameter("item_id"));
-
 		byte byteArray[] = null;
-
+		con = conProvider.getConnection();
+		PreparedStatement ps = null;
 		try {
+			if (item_id > 0 && item_id <= 1000) {
 
-			con = conProvider.getConnection();
-			PreparedStatement ps = con.prepareStatement("select item_image from electronics_items where item_id=?");
+				ps = con.prepareStatement("select item_image from electronics_items where item_id=?");
+
+			}
+			if (item_id > 1000 && item_id <= 2000) {
+				ps = con.prepareStatement("select item_image from cloth_items where item_id=?");
+
+			}
 			ps.setInt(1, item_id);
 			ResultSet rs = ps.executeQuery();
 
@@ -41,7 +47,6 @@
 			os.write(byteArray);
 			os.flush();
 			os.close();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
