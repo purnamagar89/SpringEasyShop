@@ -46,9 +46,6 @@ public class ItemDAO {
 
 						Item i = new Item();
 						i.setItem_id(rs.getInt("item_id"));
-
-						System.out.println("item_id " + i.getItem_id());
-
 						i.setItem_name(rs.getString("item_name"));
 						i.setItem_price(rs.getInt("item_price"));
 						return i;
@@ -106,6 +103,27 @@ public class ItemDAO {
 				return i;
 			}
 		});
+
+	}
+
+	public List<Item> getSearchResult(String search_items) {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		String si = "%"+search_items+"%";
+		params.addValue("search_items", si);
+		return jdbc.query(
+				"select item_id,item_name,item_price from electronics_items where item_name like :search_items union all select item_id, item_name,item_price from cloth_items where item_name like :search_items",
+				params,
+				new RowMapper<Item>() {
+
+					public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+						Item i = new Item();
+						i.setItem_id(rs.getInt("item_id"));
+						i.setItem_name(rs.getString("item_name"));
+						i.setItem_price(rs.getInt("item_price"));
+						return i;
+					}
+				});
 
 	}
 

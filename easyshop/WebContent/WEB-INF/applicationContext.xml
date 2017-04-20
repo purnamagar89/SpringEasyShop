@@ -37,16 +37,19 @@
 				access="hasAuthority('admin')" />
 			<security:intercept-url pattern="/home"
 				access="permitAll" />
-			<security:intercept-url pattern="/electronicsItems"
+			<security:intercept-url pattern="/home"
 				access="permitAll" />
+			<security:intercept-url pattern="/searchResult"
+				access="permitAll" />
+				<security:intercept-url pattern="/electronicsItems"
+				access="permitAll" />
+			
 			<security:intercept-url pattern="/clothItems"
 				access="permitAll" />
 			<security:intercept-url pattern="/viewImage"
 				access="permitAll" />
 			<security:intercept-url pattern="/getImage"
 				access="permitAll" />
-
-
 			<security:intercept-url pattern="/additem"
 				access="permitAll" />
 			<security:intercept-url pattern="/itemadded.jsp"

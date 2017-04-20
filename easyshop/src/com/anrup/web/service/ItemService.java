@@ -45,4 +45,8 @@ public class ItemService {
 		return itemDao.getClothItems();
 	}
 
+	public List<Item> getSearchResult(String search_items) {
+		return itemDao.getSearchResult(search_items);
+	}
+
 }

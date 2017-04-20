@@ -64,11 +64,19 @@
 					href="${pageContext.request.contextPath}/login">Log out</a>
 			</div>
 		</div>
+		<div class="wrapper">
+			<form class="item_search"
+				action="${pageContext.request.contextPath}/searchResult">
+				<input class="item_serch_input" type="text" name="search_items"
+					placeholder="product search"> <input
+					class="item_search_button" type="submit" value="search">
+			</form>
+		</div>
 	</div>
+
+
 	<div class="items">
-
 		<table>
-
 			<tr
 				style="background-color: rgb(128, 128, 128); color: white; height: 50px">
 				<th class="row-Id">ID</th>
