@@ -10,6 +10,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/static/script/jquery.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/static/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/static/css/createaccount.css">
+
 <title>Create New Account</title>
 
 <script type="text/javascript">
@@ -50,9 +55,20 @@
 </head>
 <body>
 	<div class="header">
-		<form action="${pageContext.request.contextPath}/login">
-			<input type="submit" value="Sign Out" />
-		</form>
+
+		<div class="login-page-link">
+			<a href="${pageContext.request.contextPath}/login" data-role="button">Login</a>
+		</div>
+
+
+		<div class="header_contents">
+			<ul>
+				<li id="toolbar-contents"><a href="#home">Home</a></li>
+				<li id="toolbar-contents"><a href="#news">News</a></li>
+				<li id="toolbar-contents"><a href="#contact">Contact</a></li>
+				<li id="toolbar-contents"><a href="#about">About</a></li>
+			</ul>
+		</div>
 	</div>
 
 
@@ -101,7 +117,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td><input class="button" type="submit"
+					<td><input class="user-creater-button" type="submit"
 						value="Create New Account" width="181" height="30"
 						style="text-align: center; font-size: 13px;">
 					<td>

@@ -52,46 +52,42 @@ th, td {
 	left: 160px;
 }
 
-.button_home {
+.add-to-cart-button {
 	width: 80px;
 	padding: 5px 7px;
 	text-align: center;
-	text-decoration: blink;
 	border-radius: 4px;
-	color: black;
+	color: white;
+	background-color:#006bb3;
 	font-weight: bold;
-	font-size: 10px;
-	cursor:pointer;
+	font-size: 12px;
+	cursor: pointer;
 }
 
 .dropbtn {
 	background-color: white;
 	color: black;
 	font-size: 16px;
-	text-align:center;
+	text-align: center;
 	margin: 0;
-	padding:0px;
+	padding: 0px;
 	border: none;
 	cursor: pointer;
-	border-radius: 3px;
-	width: 35px;
-	height: 15px;
+	border-radius: 2px;
+	width: 18px;
+	height: 18px;
+	background-color: #4d4dff;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-	background-color: white;
+	background-color: #3333ff;
 }
 
 .dropdown {
 	position: absolute;
+	top:14px;
 	display: inline-block;
-	left: 87%;
-}
-
-.choice_dropdown {
-	position: absolute;
-	display: inline-block;
-	left: 77%;
+	left: 83%;
 }
 
 .dropdown-content {
@@ -100,10 +96,12 @@ th, td {
 	background-color: #f9f9f9;
 	border-radius: 5px;
 	min-width: 180px;
+	height: auto;
 	overflow: auto;
 	font-size: 15px;
 	z-index: 1;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	overflow: auto;
 }
 
 .dropdown-content a {
@@ -114,12 +112,87 @@ th, td {
 }
 
 .dropdown a:hover {
-	background-color: #1E90FF;
-	height: 8px;
+	background-color: #4d4dff;
+	height: auto;
+	color: white;
 }
 
 .show {
 	display: block;
 }
 
+.departments-dropdown {
+	position: absolute;
+	display: inline-block;
+	top: -8px;
+	left: 72%;
+}
 
+ul.outer {
+	padding: 0;
+	list-style: none;
+	background: #4d4dff;
+}
+
+.dept_color {
+	color: white;
+}
+
+ul#inner {
+	padding: 0;
+	list-style: none;
+	background: white;
+	border-radius: 3px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+ul.outer li {
+	display: inline-block;
+	position: relative;
+	line-height: 18px;
+	text-align: left;
+}
+
+ul.outer li a {
+	display: block;
+	padding: 8px 20px;
+	color: #333;
+	text-decoration: none;
+}
+
+ul.outer li :hover {
+	color: white;
+	background: #3333ff;
+}
+
+ul.outer li ul.dropdown {
+	min-width: 180px; /* Set width of the dropdown */
+	margin-top:20px;
+	background: #f2f2f2;
+	display: none;
+	position: absolute;
+	z-index: 999;
+	left: 0;
+}
+
+ul.outer li:hover ul.dropdown {
+	display: block;
+}
+
+ul.outer li ul.dropdown li {
+	display: block;
+}
+
+button.drpdown-color {
+	color: white;
+}
+
+.quantity-input-text {
+    width: 60px;
+    padding: 8px 14px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

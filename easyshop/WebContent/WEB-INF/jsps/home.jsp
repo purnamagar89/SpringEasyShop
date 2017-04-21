@@ -30,34 +30,60 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>home</title>
+
+<style type="text/css">
+.search_img_button {
+	background:
+		url(${pageContext.request.contextPath}/static/images/find.png)
+		no-repeat;
+	height: 24.5px;
+	width: 40px;
+	cursor: pointer;
+	border: none;
+	border-radius: 2px;
+	margin-left: -11.2%;
+	background-size: 18px 18px;
+	background-color: #0073e6;
+	background-position: 10px 2px;
+	background-repeat: no-repeat;
+	padding: 6px 8px 6px 8px;
+	cursor: pointer;
+	border: 1px solid #0073e6;
+}
+</style>
+
+
+
 </head>
 <body>
 	<div class="header">
 
-		<div class="header_content">
+		 <div class="header_contents">
 			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#news">News</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li><a href="#about">About</a></li>
+				<li id="toolbar-contents"><a href="#home">Home</a></li>
+				<li id="toolbar-contents"><a href="#news">News</a></li>
+				<li id="toolbar-contents"> <a href="#contact">Contact</a></li>
+				<li id="toolbar-contents"><a href="#about">About</a></li>
 			</ul>
 		</div>
-		<div class="choice_dropdown">
-			<select name="categories_dropdown" id="categories">
-				<option data-href="${pageContext.request.contextPath}/">
-					Categories</option>
-				<option data-href="${pageContext.request.contextPath}/">All</option>
-				<option
-					data-href="${pageContext.request.contextPath}/electronicsItems">Electronics</option>
-				<option data-href="${pageContext.request.contextPath}/clothItems">Clothes</option>
-			</select>
-
+ 
+		<div class="departments-dropdown">
+			<ul class="outer">
+				<li><a href="#"><span class="dept_color">Departments &#9662;</span></a>
+					<ul id="inner" class="dropdown">
+						<li><a href="${pageContext.request.contextPath}/">All</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/electronicsItems">Electronics</a></li>
+						<li><a href="${pageContext.request.contextPath}/clothItems">Clothes</a></li>
+					</ul>
+				</li>
+			</ul>
+						
 		</div>
 
 		<div class="dropdown">
-			<input class="dropbtn" type="submit" value="&#9660;"
-				onclick="myFunction()" />
-			<p>
+		<button class="dropbtn" onclick="myFunction()">&#9776;</button>
+		<p>
 			<div id="myDropdown" class="dropdown-content">
 				<a href="${pageContext.request.contextPath}/admin">Admin</a> <a
 					href="#setting">Setting</a> <a
@@ -68,28 +94,29 @@
 			<form class="item_search"
 				action="${pageContext.request.contextPath}/searchResult">
 				<input class="item_serch_input" type="text" name="search_items"
-					placeholder="product search"> <input
-					class="item_search_button" type="submit" value="search">
+					placeholder="product search">
+				<button name="button" class="search_img_button" id="item_search_btn"></button>
+
 			</form>
 		</div>
 	</div>
 
 
 	<div class="items">
+
 		<table>
-			<tr
-				style="background-color: rgb(128, 128, 128); color: white; height: 50px">
-				<th class="row-Id">ID</th>
-				<th class="row-name">NAME</th>
-				<th class="row-image">IMAGE</th>
-				<th class="row-price">PRICE</th>
-				<th class="row-quantity" colspan="2">QUANTITY</th>
+			<tr style="background-color: #8080ff; color: white; height: 30px">
+				<th class="row-Id">Id</th>
+				<th class="row-name">Name</th>
+				<th class="row-image">Image</th>
+				<th class="row-price">Price</th>
+				<th class="row-quantity" colspan="2">Quantity</th>
 			</tr>
 
 			<c:forEach var="item" items="${items}">
 				<tr>
 
-					<td style="background-color: rgb(128, 128, 128); color: white;"><c:out
+					<td><c:out
 							value="${item.getItem_id()}"></c:out></td>
 
 					<td><c:out value="${item.getItem_name()}"></c:out></td>
@@ -104,8 +131,8 @@
 							<input type="hidden" name="item_name"
 								value="${item.getItem_name()}" /> <input type="hidden"
 								size="10" name="item_price" value="${item.getItem_price()}" />
-							<input type="text" size="15" name="item_quantity" />
-							<td><input class="button_home" type="submit"
+							<input class="quantity-input-text" type="text" name="item_quantity" />
+							<td><input class="add-to-cart-button" type="submit"
 								value="AddToCart"></td>
 						</form>
 					</td>

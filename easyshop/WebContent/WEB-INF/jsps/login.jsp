@@ -17,12 +17,12 @@
 
 	<div class="header">
 
-		<div class="header_content">
+		 <div class="header_contents">
 			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#news">News</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li><a href="#about">About</a></li>
+				<li id="toolbar-contents"><a href="#home">Home</a></li>
+				<li id="toolbar-contents"><a href="#news">News</a></li>
+				<li id="toolbar-contents"> <a href="#contact">Contact</a></li>
+				<li id="toolbar-contents"><a href="#about">About</a></li>
 			</ul>
 		</div>
 
@@ -64,7 +64,7 @@
 						value="${_csrf.token}" /></td>
 				<tr>
 				<tr>
-					<td><input class="button" type="submit" value="Sign In"></td>
+					<td><input class="account_login_button" type="submit" value="Sign In"></td>
 				</tr>
 				<tr>
 
@@ -75,7 +75,7 @@
 				</tr>
 
 				<tr>
-					<td><input class="button" type="button" value="Create Account"
+					<td><input class="account_create_button" type="button" value="Create Account"
 						onclick="window.location.href='${pageContext.request.contextPath}/createaccount'" /></td>
 				</tr>
 

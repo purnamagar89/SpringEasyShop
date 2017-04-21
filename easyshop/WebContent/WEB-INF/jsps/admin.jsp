@@ -13,6 +13,17 @@
 	<div class="header">
 		<a class="logout" href="${pageContext.request.contextPath}/login">Log
 			Out</a>
+
+
+		<div class="header_contents">
+			<ul>
+				<li id="toolbar-contents"><a href="#home">Home</a></li>
+				<li id="toolbar-contents"><a href="#news">News</a></li>
+				<li id="toolbar-contents"><a href="#contact">Contact</a></li>
+				<li id="toolbar-contents"><a href="#about">About</a></li>
+			</ul>
+		</div>
+
 	</div>
 
 	<div class="home">

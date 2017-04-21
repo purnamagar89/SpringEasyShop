@@ -1,0 +1,11 @@
+div.login-page-link {
+	position: absolute;
+	display: inline-block;
+	left: 90%;
+	top:15px;
+}
+
+div.login-page-link a{
+	color: white;
+	text-decoration: none;
+}
